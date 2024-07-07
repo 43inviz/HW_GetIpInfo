@@ -10,5 +10,15 @@ namespace HW_IP_app
     {
         public string City { get; set; }
         public string Country { get; set; }
+
+        public Response() { }
+
+        public Response(string city, string country)
+        {
+            City = city;
+            Country = country;
+        }
+
+        
     }
 }
