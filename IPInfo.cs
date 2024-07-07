@@ -18,7 +18,7 @@ namespace HW_IP_app
 
         public static async void GetInfoByIP(string ip)
         {
-            string url = $"http://ipwho.is/{ip}?fields=city";
+            string url = $"http://ipwho.is/{ip}?fields=city,country";
 
             HttpClient client = new HttpClient();
             var response = await client.GetAsync(url);
@@ -32,7 +32,7 @@ namespace HW_IP_app
 
                     string fullPath = $"../../Response/{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}.json";
 
-                    Console.WriteLine(data.City);
+                    Console.WriteLine($"Country: {data.Country} City: {data.City}");
                     SaveResponseToFile(fullPath, data);
                 }
 

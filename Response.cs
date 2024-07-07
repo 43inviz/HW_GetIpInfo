@@ -9,5 +9,6 @@ namespace HW_IP_app
     public class Response
     {
         public string City { get; set; }
+        public string Country { get; set; }
     }
 }
